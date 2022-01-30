@@ -1,0 +1,26 @@
+{
+  "name": "@molfar/service-chassis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdc-molfar/service-chassis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdc-molfar/service-chassis/issues"
+  },
+  "homepage": "https://github.com/wdc-molfar/service-chassis#readme",
+  "dependencies": {
+    "@molfar/amqp-client": "github:wdc-molfar/amqp-client",
+    "@molfar/csc": "github:wdc-molfar/csc",
+    "lodash": "^4.17.21",
+    "prom-client": "^14.0.1",
+    "uuid": "^8.3.2"
+  }
+}

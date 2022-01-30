@@ -1,0 +1,71 @@
+msapi: "1.0.1"
+
+metadata: 
+  
+    id: task_queue.scheduler
+  
+    title: Планувальник завдань 
+  
+service:
+
+    monitoring:
+        time-interval: 1000
+        transport:
+            amqp: 
+                url: amqps://xoilebqg:Nx46t4t9cxQ2M0rF2rIyZPS_xbAhmJIG@hornet.rmq.cloudamqp.com/xoilebqg
+            exchange:
+                name: "metrics"
+                mode: fanout
+                options:
+                    durable: true
+                    persistent: true
+    logger:                
+        log:
+            amqp: 
+                url: amqps://xoilebqg:Nx46t4t9cxQ2M0rF2rIyZPS_xbAhmJIG@hornet.rmq.cloudamqp.com/xoilebqg
+            exchange:
+                name: "log"
+                mode: fanout
+                options:
+                    durable: true
+                    persistent: true
+        debug:
+            amqp: 
+                url: amqps://xoilebqg:Nx46t4t9cxQ2M0rF2rIyZPS_xbAhmJIG@hornet.rmq.cloudamqp.com/xoilebqg
+            exchange:
+                name: "debug"
+                mode: fanout
+                options:
+                    durable: true
+                    persistent: true
+        
+        error:
+            amqp: 
+                url: amqps://xoilebqg:Nx46t4t9cxQ2M0rF2rIyZPS_xbAhmJIG@hornet.rmq.cloudamqp.com/xoilebqg
+            exchange:
+                name: "error"
+                mode: fanout
+                options:
+                    durable: true
+                    persistent: true                                   
+
+
+    produce:
+        amqp:
+            url: "amqps://xoilebqg:Nx46t4t9cxQ2M0rF2rIyZPS_xbAhmJIG@hornet.rmq.cloudamqp.com/xoilebqg"
+        
+        exchange:
+            name: scraper_tasks
+            mode: fanout
+                
+        message:
+            type: object
+            required:
+                - type
+                - url
+            properties:
+                type:
+                    type: string
+                url:
+                    type: string
+                    format: uri-reference
