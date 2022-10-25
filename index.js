@@ -1,5 +1,5 @@
 const { ServiceWrapper } = require("@molfar/csc")
-const { AmqpManager, Middlewares, yaml2js } = require("@molfar/amqp-client")
+const { AmqpManager, Middlewares, yaml2js, resolveRefs } = require("@molfar/amqp-client")
 const createLogger = require("./src/logger")
 const createMonitor = require("./src/metrics")
 const promClient = require("prom-client")
@@ -11,6 +11,7 @@ module.exports = {
     promClient,
     createLogger,
     createMonitor,
-    yaml2js
+    yaml2js,
+    resolveRefs
 }
 

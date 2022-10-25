@@ -9,7 +9,7 @@ metadata:
 service:
 
     monitoring:
-        time-interval: 1000
+        time-interval: 2000
         transport:
             amqp: 
                 url: amqps://xoilebqg:Nx46t4t9cxQ2M0rF2rIyZPS_xbAhmJIG@hornet.rmq.cloudamqp.com/xoilebqg
